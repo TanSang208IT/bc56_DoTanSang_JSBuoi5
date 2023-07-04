@@ -13,15 +13,15 @@ function timSoNguyenN () {
      var tongSoNguyen = 0;
      var soNguyen = 1;
 
-     while (tongSoNguyen <= 10000){
+     while (tongSoNguyen < 10000){
         tongSoNguyen += soNguyen; 
         soNguyen++;
      }
-     return soNguyen;
+     return soNguyen - 1;
 
     } 
  var ketQua = timSoNguyenN();
- console.log(ketQua);
+ document.getElementById("soDuongNhoNhat").innerHTML = "Số nguyên dương nhỏ nhất là " + ketQua;
 
  /**BÀI TẬP 2: VIẾT CHƯƠNG TRÌNH NHẬP VÀO 2 số x, n tính tổng S(n) = x + x^2 + x^3 +...+ x^n
   * INPUT: nhập số x, n nguyên dương
@@ -34,9 +34,9 @@ function tinhTongMu() {
 
     var tongMu = 0;
     var soMu = 1;
-    while (soMu <= soN) {
+    while (soMu <= soX) {
        
-        tongMu += soX ** soMu;
+        tongMu += soN ** soMu;
         soMu++;
     }
     document.querySelector(".tinhTongMu").innerHTML = tongMu;
@@ -72,22 +72,4 @@ function xetChanLe() {
       div.className = i % 2 === 0 ? "red" : "blue";
       chanLe.appendChild(div);
   }
-}
-
-/**BÀI TẬP 5:  Viết chương trình có ô input + button. khi click vào button thì in ra các số nguyên tố từ 1 tới K trong ô input đucợ nhập 
- * Input: lấy dữ liệu số K từ ô input
- * Xử lý dữ liệu: gán giá trị số nguyên nếu <= K 
- * Output: xuất dãy số in ra
- * 
- */
-
-function inSoNguyenTo () {
-    var soK = document.getElementById("soKBatky").value * 1;
-    const ketQuaNguyenTo = document.getElementById("hi");
-    ketQuaNguyenTo.innerHTML = "";
-
-    for (var i = 1; i <= soK; i++) {
-        ketQuaNguyenTo.innerHTML += i;
-    }
-   
 }
